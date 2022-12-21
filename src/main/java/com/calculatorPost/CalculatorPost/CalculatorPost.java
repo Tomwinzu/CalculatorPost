@@ -1,11 +1,18 @@
 package com.calculatorPost.CalculatorPost;
 
+import java.util.ArrayList;
+
 public class CalculatorPost {
-private String data;
+private ArrayList data;
 private int max;
 private int divisor;
 private int limit;
-
+    public CalculatorPost (ArrayList data) {
+        this.data=data;
+    }
+    public ArrayList getData() {
+        return data;
+    }
 
     public CalculatorPost(int max, int divisor, int limit) {
         this.max = max;
@@ -37,10 +44,9 @@ private int limit;
         this.limit = limit;
     }
 
-    public CalculatorPost (String data) {
-        this.data = data;}
-        public String getData () {
-            return data;
+
+
+
         }
-    }
+
 

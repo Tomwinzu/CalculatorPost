@@ -2,7 +2,8 @@ package com.calculatorPost.CalculatorPost;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import java.util.*;
+import java.util.stream.*;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -14,15 +15,14 @@ import java.util.ArrayList;
 
 public class CalculatorPostController {
 
-            @PostMapping("/ai/calculation2")
+    @PostMapping("/ai/calculation2")
 
-        public CalculatorPost calculation2 (@RequestBody CalculatorPost calculatorPost){
+    public CalculatorPost calculation2(@RequestBody CalculatorPost calculatorPost) {
 
         System.out.println(calculatorPost);
 
         ArrayList<Integer> myArray = new ArrayList<Integer>();
-
-        ArrayList array = new ArrayList();
+        ArrayList<String> array = new ArrayList<String>();
         int resultIndex = 0;
         int max = calculatorPost.getMax();
         int divisor = calculatorPost.getDivisor();
@@ -34,13 +34,14 @@ public class CalculatorPostController {
                 resultIndex = myArray.size();
             }
         }
-                for (int n = 1; n <= limit; n++) {
+        for (int n = 1; n <= limit; n++) {
+            String myString = Integer.toString(myArray.get(resultIndex - n) + 2);
 
-                 array.add(" I am " + (myArray.get(resultIndex - n) + 2));}
+            array.add("" + "I am " + myString + "");
+
+        }
 
 
-
-        return new CalculatorPost(String.format(String.valueOf(array)));
-    }
-
+            return new CalculatorPost(array);
+        }
     }
