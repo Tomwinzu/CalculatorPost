@@ -1,20 +1,14 @@
 package com.calculatorPost.CalculatorPost;
 
-import java.util.ArrayList;
-
 public class CalculatorPost {
-private ArrayList data;
+
 private int max;
 private int divisor;
 private int limit;
-    public CalculatorPost (ArrayList data) {
-        this.data=data;
-    }
-    public ArrayList getData() {
-        return data;
-    }
 
-    public CalculatorPost(int max, int divisor, int limit) {
+
+    public CalculatorPost(int max, int divisor, int limit)
+    {
         this.max = max;
         this.divisor = divisor;
         this.limit = limit;
@@ -32,7 +26,7 @@ private int limit;
         return divisor;
     }
 
-    public void setDivisor(int diviaor) {
+    public void setDivisor(int divisor) {
         this.divisor = divisor;
     }
 

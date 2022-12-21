@@ -17,7 +17,7 @@ public class CalculatorPostController {
 
     @PostMapping("/ai/calculation2")
 
-    public CalculatorPost calculation2(@RequestBody CalculatorPost calculatorPost) {
+    public CalculatorPostResponse calculation2(@RequestBody CalculatorPost calculatorPost) {
 
         System.out.println(calculatorPost);
 
@@ -42,6 +42,6 @@ public class CalculatorPostController {
         }
 
 
-            return new CalculatorPost(array);
+            return new CalculatorPostResponse(array);
         }
     }
